@@ -1,0 +1,32 @@
+{
+  "name": "ProductAPIB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "db": "psql -U soph productAPI < database/schema.sql",
+    "k6": "k6 run k6script.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SDC-VanGogh/ProductAPIB.git"
+  },
+  "keywords": [],
+  "author": "SophXN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SDC-VanGogh/ProductAPIB/issues"
+  },
+  "homepage": "https://github.com/SDC-VanGogh/ProductAPIB#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1",
+    "compression": "^1.7.4",
+    "jest": "^27.0.6",
+    "morgan": "^1.10.0",
+    "newrelic": "^8.1.0",
+    "pg": "^8.7.1"
+  }
+}
