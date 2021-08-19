@@ -2,10 +2,11 @@ const express = require('express');
 const db = require('../database/index.js');
 const router = require('./routes.js');
 const compression = require('compression');
+const config = require('../config.js')
 const app = express();
 const PORT = 3000;
 
-require('newrelic');
+//require('newrelic');
 const cluster = require('cluster');
 const totalCPUs = require('os').cpus().length;
 
@@ -28,6 +29,10 @@ if (cluster.isMaster) {
 app.use('/', router);
 
 app.use(express.json());
+
+app.get(`/${config.loaderIO}`, (req, res) => {
+  res.send(config.loaderIO);
+});
 
 app.listen(PORT, () => {
   console.log(`Listening from outerspace @ http://localhost:${PORT}`)
